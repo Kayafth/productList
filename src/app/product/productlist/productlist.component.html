@@ -1,0 +1,26 @@
+
+<section>
+    <div class="container">
+        <div class="row"><h1 class="text-center text-danger">Product List</h1></div>
+        <div class="row">
+            <div class="col-md-3">
+              <input type="text" class="form-control mb-3" placeholder="Ürün Ara" (keyup)="search($event, searchBox.value)" #searchBox>
+
+            </div>
+          </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-6 mb-4" *ngFor="let post of products">
+
+                <div class="card">
+                    <img [src]="post.images[0]" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.description }}</p>
+                        <p class="card-text fiyat">{{ formatPrice(post.price)}} ₺</p>
+                        <a href="javascript:void(0)" class="btn btn-danger">Sepete Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
